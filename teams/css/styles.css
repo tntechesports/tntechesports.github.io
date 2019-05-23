@@ -1,0 +1,168 @@
+body {
+	margin: 0;
+	background: #FFFFFF;
+	font-family: "Raleway", sans-serif;
+	font-weight: 400;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+}
+
+header {
+	background: #000;
+}
+
+header::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.logo {
+	float: left;
+	padding: 10px 0;
+}
+
+nav {
+	float: right;
+	overflow: auto;
+}
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin-left: 70px;
+	padding-top: 23px;
+	
+	position: relative;
+}
+
+nav a {
+	color: #FFDD00;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+nav a:hover {
+	color: #FFDD00;
+}
+
+nav a:before {
+	content: '';
+	display: block;
+	height: 5px;
+	background-color: #444;
+	
+	position: absolute;
+	top: 0;
+	width: 0%;
+	
+	transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+	width: 100%;
+}
+
+.button {
+        background-color: #000;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
+.center {
+  position: absolute;
+  background-color: #000;
+  color: white;
+  left: 35%;
+  top: 90%;
+  border: none;
+  width: 31%;
+  text-align: center;
+  font-size: 50px;
+  display: inline-block;
+  text-decoration: none;
+
+}
+
+/* --- cards section --- */
+
+* {
+	box-sizing: border-box;
+}
+
+.column {
+	float: left;
+	width: 14%;
+	padding: 0 0px;
+}
+
+.row {
+	margin: auto;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.card {
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	text-align: center;
+	background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+		display: block;
+		margin-bottom: 0px;
+	}
+}
+
+footer {
+	display: block;
+	background-color: black;
+	color: white;
+	text-align: center;
+
+	}
+	
+.columnTeam {
+	float: left;
+	width: 14%;
+	padding: 0 10px;
+}	
+
+.cardTeam {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 40%;
+}
+
+.cardTeam:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.containerTeam {
+	padding: 2px 16px;
+}
+
