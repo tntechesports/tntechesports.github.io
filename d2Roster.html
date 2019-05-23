@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Dota 2 Roster</title>
+<title>Golden Eagles OW</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -51,19 +51,80 @@ body, html {
 		</nav>
 	</div>
 </header>
-<h1>Dota 2 - Golden Eagles</h1>
+	<h1> </h1>
 <div class="row">
 <div class="columnTeam">
-    <div class="cardTeam" style="width:100%">
-		<img src="assets/dota 2.png" alt="Dota 2 Logo" style="width:90%">
+    <div class="cardTeamM" style="width:80%" >
+		<img src="assets/ow.png" alt="Overwatch Logo" style="width:100%" >
 		<div class="containerTeam">
-			<h3><b>Golden Eagles Dota 2</b></h3>
+			<h3><b>Golden Eagles OW</b></h3>
 		</div>
 	</div>	
     </div>
-  </div>
-</div>
+	</div>
 
+<table id="customers" align="center" class="sortable">
+  <tr>
+    <th onclick="sortTable(0)">Player Battletag</th>
+	  <th onclick="sortTable(1)">Player Name</th>
+    <th onclick="sortTable(2)">Position</th>
+    <th onclick="sortTable(3)">SR</th>
+  </tr>
+  <tr>
+    <td>JustHUD</td>
+    <td>Justin Huddleston</td>
+    <td>DPS</td>
+	  <td>3785</td>
+  </tr>
+  <tr>
+    <td>Benacales</td>
+    <td>Ben Austin</td>
+    <td>DPS</td>
+	  <td>3515</td>
+  </tr>
+<tr>
+    <td>Beepbobee</td>
+    <td>Zachary Ault</td>
+    <td>DPS</td>
+	  <td>3744</td>
+  </tr>
+  <tr>
+    <td>Maple Barkley</td>
+    <td>Tyler Edwards</td>
+    <td>DPS</td>
+    <td>3600</td>
+  </tr>
+  <tr>
+    <td>Drcool</td>
+    <td>Saint Martin</td>
+    <td>Main Tank</td>
+	  <td>3560</td>
+  </tr>
+  <tr>
+    <td>SirMittens</td>
+    <td>Bekah Brandt</td>
+    <td>Off Tank</td>
+	  <td>3696</td>
+  </tr>
+  <tr>
+    <td>StollenTorch</td>
+    <td>Davis Stoll</td>
+    <td>Flex Support</td>
+	  <td>4100</td>
+  </tr>
+
+  <tr>
+    <td>Gandork</td>
+    <td>Nick Mynatt</td>
+    <td>Main Support</td>
+	  <td>3831</td>
+  </tr>
+</table>
+<footer>
+	<p> </p>
+	<p>Tennessee Technological University</p>
+	<p>eSports Club</p>
+</footer>
 <script>
 function onClick(element) {
 	document.getElementById("img01").src = element.src;
@@ -82,6 +143,61 @@ function open(){
 
 function close(){
 	mySidebar.style.display = "none";
+}
+	
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("customers");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc"; 
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /* Check if the two rows should switch place,
+      based on the direction, asc or desc: */
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++; 
+    } else {
+      /* If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again. */
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
 }
 </script>
 </body>
