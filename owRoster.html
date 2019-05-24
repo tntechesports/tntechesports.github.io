@@ -39,7 +39,7 @@ body, html {
 <header>
 
 <!-- Navbar (sit on top) -->
-	<div class="container">
+	<div class="container nav">
 		<img src="assets/logo.svg" alt="logo" class="logo">
 		
 		<nav>
@@ -49,6 +49,9 @@ body, html {
 				<li><a href="teams.html">Teams</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    					<i class="fa fa-bars"></i>
+  				</a>
 		</nav>
 	</div>
 </header>
@@ -209,6 +212,15 @@ function sortTable(n) {
         switching = true;
       }
     }
+  }
+}
+	
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
   }
 }
 </script>
