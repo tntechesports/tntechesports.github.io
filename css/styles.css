@@ -28,7 +28,7 @@ header::after {
 
 nav {
 	float: right;
-	overflow: auto;
+	overflow: hidden;
 }
 
 nav ul{
@@ -46,6 +46,10 @@ nav li {
 }
 
 nav a {
+	float: left;
+	display: block;
+	padding: 14px 16px;
+	text-align: center;
 	color: #FFDD00;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -71,6 +75,36 @@ nav a:before {
 
 nav a:hover::before {
 	width: 100%;
+}
+.active {
+	background-color: #444;
+	color:#FFDD00;
+}
+
+.nav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .nav a:not(:first-child) {display: none;}
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 .button {
