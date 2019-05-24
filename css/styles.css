@@ -223,10 +223,10 @@ footer {
 
 .hero-image {
 	background-image: url("../assets/ow_team.jpg");
-	height: 50%;
+	height: 70%;
 	background-position: center;
   	background-repeat: no-repeat;
-	 background-size: cover;
+	background-size: cover;
   	position: relative;
 }
 
