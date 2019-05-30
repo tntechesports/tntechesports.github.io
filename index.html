@@ -79,23 +79,17 @@ body, html {
 	<div class="topnav" id="myTopnav">
 		<img src="assets/logo.svg" alt="logo" class="logo">
 
-				<div class="dropdown">
-				  <button class="dropbtn">Social Media
-					  <i class="fa fa-caret-down"></i>
-					</button>
-				  <div class="dropdown-content">
-				  	<a href="https://twitch.tv/tntechesports">Twitch</a>
-				  	<a href="https://discord.gg/Wf5k3Xu">Discord</a>
-				  	<a href="socialmedia.html">Socia Media</a>
+				  <div id="myLinks">
+				 	<a href="blog.html">Blog</a>	
+					<a href="teams.html">Teams</a>
+					<a href="about.html">About</a>
+					<a href="index.html">Home</a>
 				  </div>
+				  <a href="javascript:void(0);" class="icon" onclick="menuFunction()">
+				    <i class="fa fa-bars"></i>
+				  </a>
 				</div>
-				<a href="blog.html">Blog</a>	
-				<a href="teams.html">Teams</a>
-				<a href="about.html">About</a>
-				<a href="index.html">Home</a>
-				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    					<i class="fa fa-bars"></i>
- 				 </a>
+			
 	</div>
 
 	
@@ -133,6 +127,15 @@ function myFunction() {
   } else {
     x.className = "topnav";
   }
+}
+	
+function menuFunction() {
+	var x = document.getElementById("myLinks");
+	if (x.style.display === "block") {
+	x.style.display = "none";
+	} else {
+	x.style.display = "block";
+	}
 }
 </script>
 </body>
